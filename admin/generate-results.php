@@ -291,9 +291,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
                     $status = ($final_gpa > 0) ? 'Pass' : 'Fail';
 
                     // Insert/Update final results. The UNIQUE KEY ensures we overwrite properly.
-                    $stmt_res = $conn->prepare("INSERT INTO final_results (student_id, exam_type, total_marks, total_gpa, final_grade, status) 
-                                                VALUES (?, ?, ?, ?, ?, ?) 
-                                                ON DUPLICATE KEY UPDATE total_marks = VALUES(total_marks), total_gpa = VALUES(total_gpa), final_grade = VALUES(final_grade), status = VALUES(status)");
+                    // NEW: Results are compiled but NOT published by default (is_published = 0)
+                    $stmt_res = $conn->prepare("INSERT INTO final_results 
+                                                (student_id, exam_type, total_marks, total_gpa, final_grade, status, is_published) 
+                                                VALUES (?, ?, ?, ?, ?, ?, 0) 
+                                                ON DUPLICATE KEY UPDATE 
+                                                    total_marks = VALUES(total_marks), 
+                                                    total_gpa = VALUES(total_gpa), 
+                                                    final_grade = VALUES(final_grade), 
+                                                    status = VALUES(status),
+                                                    is_published = 0");
                     $stmt_res->execute([$student_id, $exam_type, $total_marks, $final_gpa, $final_grade, $status]);
                     $total_students_processed++;
                 }
@@ -365,7 +372,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             $unique_students = ($exam_type_post === 'all') ? ($total_students_processed / 2) : $total_students_processed;
         }
 
-        $message = "Synthesis Complete! Processed <b>" . ceil($unique_students) . "</b> students across <b>$evaluations</b> exam evaluations and <b>$total_marks_updated</b> subject entries.";
+        $message = "Synthesis Complete! Processed <b>" . ceil($unique_students) . "</b> students across <b>$evaluations</b> exam evaluations and <b>$total_marks_updated</b> subject entries. <br><strong style='color: #f59e0b;'>⚠️ Results are compiled but NOT published yet.</strong> Use the toggle button below to publish when ready.";
     } catch (Exception $e) {
         if ($conn->inTransaction())
             $conn->rollBack();
@@ -849,6 +856,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
                             </button>
                         </div>
                     </div>
+
+                    <!-- Publish Control Section -->
+                    <div class="row mt-4 g-3" id="publishControlSection" style="display: none;">
+                        <div class="col-12">
+                            <div class="card border-warning shadow-sm">
+                                <div class="card-header bg-warning text-dark">
+                                    <i class="fas fa-eye me-2"></i><strong>Result Publishing Control</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-3">
+                                        <small class="text-muted">
+                                            <i class="fas fa-info-circle"></i> 
+                                            Results are compiled but hidden from students. Use the toggle below to publish/hide results instantly.
+                                        </small>
+                                    </p>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button type="button" id="btnTogglePublish" class="btn btn-outline-primary" onclick="togglePublish()">
+                                            <i class="fas fa-toggle-off me-2"></i> <span id="publishBtnText">Publish Results</span>
+                                        </button>
+                                        <span id="publishStatusBadge" class="badge bg-secondary">Checking status...</span>
+                                        <span id="publishCountInfo" class="text-muted small ms-2"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
 
@@ -959,6 +992,168 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         window.addEventListener('DOMContentLoaded', (event) => {
             updateClasses();
         });
+
+        // ============================================
+        // RESULT PUBLISH CONTROL FUNCTIONS
+        // ============================================
+        
+        // Show publish control section after compilation
+        <?php if ($message): ?>
+        document.getElementById('publishControlSection').style.display = 'flex';
+        checkPublishStatus();
+        <?php endif; ?>
+
+        async function checkPublishStatus() {
+            const year = document.getElementById('year').value;
+            const className = document.getElementById('class_name').value;
+            const examType = document.getElementById('exam_type').value;
+
+            if (!className || className === 'all' || !examType || examType === 'all') {
+                document.getElementById('publishStatusBadge').textContent = 'Select specific class & exam';
+                return;
+            }
+
+            try {
+                // First get class_id from class_name
+                const classData = allData.find(c => 
+                    c.class_name === className && 
+                    c.academic_year == year
+                );
+
+                if (!classData) {
+                    document.getElementById('publishStatusBadge').textContent = 'Class not found';
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('action', 'get_status');
+                formData.append('class_id', classData.id);
+                formData.append('exam_type', examType);
+
+                const response = await fetch('api/toggle-result-publish.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success && result.data) {
+                    const isPublished = result.data.is_published == 1;
+                    const totalStudents = result.data.total_students || 0;
+                    const publishedCount = result.data.published_count || 0;
+
+                    updatePublishUI(isPublished, totalStudents, publishedCount);
+                } else {
+                    document.getElementById('publishStatusBadge').textContent = 'Status unavailable';
+                }
+            } catch (error) {
+                console.error('Error checking publish status:', error);
+                document.getElementById('publishStatusBadge').textContent = 'Error checking status';
+            }
+        }
+
+        function updatePublishUI(isPublished, totalStudents, publishedCount) {
+            const badge = document.getElementById('publishStatusBadge');
+            const btnText = document.getElementById('publishBtnText');
+            const btnIcon = document.querySelector('#btnTogglePublish i');
+            const countInfo = document.getElementById('publishCountInfo');
+
+            if (isPublished) {
+                badge.className = 'badge bg-success';
+                badge.textContent = '✓ Published';
+                btnText.textContent = 'Hide Results';
+                btnIcon.className = 'fas fa-toggle-on me-2';
+                document.getElementById('btnTogglePublish').className = 'btn btn-outline-success';
+            } else {
+                badge.className = 'badge bg-warning text-dark';
+                badge.textContent = '✗ Hidden';
+                btnText.textContent = 'Publish Results';
+                btnIcon.className = 'fas fa-toggle-off me-2';
+                document.getElementById('btnTogglePublish').className = 'btn btn-outline-primary';
+            }
+
+            countInfo.textContent = `(${publishedCount}/${totalStudents} students visible)`;
+        }
+
+        async function togglePublish() {
+            const year = document.getElementById('year').value;
+            const className = document.getElementById('class_name').value;
+            const examType = document.getElementById('exam_type').value;
+
+            if (!className || className === 'all' || !examType || examType === 'all') {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Selection Required',
+                    text: 'Please select a specific class and exam type first.',
+                    confirmButtonColor: '#4e73df'
+                });
+                return;
+            }
+
+            // Get current status to determine action
+            const classData = allData.find(c => 
+                c.class_name === className && 
+                c.academic_year == year
+            );
+
+            if (!classData) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Class not found in database.',
+                    confirmButtonColor: '#dc3545'
+                });
+                return;
+            }
+
+            const btn = document.getElementById('btnTogglePublish');
+            const wasDisabled = btn.disabled;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Processing...';
+
+            try {
+                const formData = new FormData();
+                formData.append('action', 'toggle_publish');
+                formData.append('class_id', classData.id);
+                formData.append('exam_type', examType);
+
+                const response = await fetch('api/toggle-result-publish.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    const isPublished = result.data.is_published == 1;
+                    
+                    Swal.fire({
+                        icon: isPublished ? 'success' : 'info',
+                        title: isPublished ? 'Results Published!' : 'Results Hidden',
+                        text: result.message,
+                        confirmButtonColor: isPublished ? '#28a745' : '#ffc107',
+                        customClass: { popup: 'rounded-4 shadow-lg' }
+                    });
+
+                    // Update UI
+                    updatePublishUI(isPublished, result.data.affected_students, isPublished ? result.data.affected_students : 0);
+                } else {
+                    throw new Error(result.message || 'Unknown error occurred');
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message || 'Failed to toggle publish status. Please try again.',
+                    confirmButtonColor: '#dc3545',
+                    customClass: { popup: 'rounded-4 shadow-lg' }
+                });
+            } finally {
+                btn.disabled = wasDisabled;
+                // Refresh status
+                setTimeout(() => checkPublishStatus(), 1000);
+            }
+        }
     </script>
 </body>
 
