@@ -1,0 +1,123 @@
+{
+    "country": "Bangladesh",
+    "authority": "Bangladesh Education Board",
+    "levels": [
+        {
+            "class": 7,
+            "subjects": {
+                "compulsory": [
+                    "Bangla",
+                    "English",
+                    "Mathematics",
+                    "Science",
+                    "Bangladesh and Global Studies",
+                    "Religion",
+                    "ICT",
+                    "Agriculture Studies / Home Science"
+                ],
+                "optional": []
+            }
+        },
+        {
+            "class": 8,
+            "subjects": {
+                "compulsory": [
+                    "Bangla",
+                    "English",
+                    "Mathematics",
+                    "Science",
+                    "Bangladesh and Global Studies",
+                    "Religion",
+                    "ICT",
+                    "Agriculture Studies / Home Science"
+                ],
+                "optional": []
+            }
+        },
+        {
+            "class": 9,
+            "group_system": true,
+            "groups": {
+                "Science": {
+                    "compulsory": [
+                        "Bangla",
+                        "English",
+                        "Mathematics",
+                        "Physics",
+                        "Chemistry",
+                        "Biology",
+                        "Bangladesh and Global Studies",
+                        "Religion",
+                        "ICT"
+                    ],
+                    "optional_pool": [
+                        "Higher Mathematics",
+                        "Agriculture Studies",
+                        "Computer Studies",
+                        "Home Science",
+                        "Arabic",
+                        "Sanskrit",
+                        "Pali",
+                        "Fine Arts"
+                    ],
+                    "optional_rule": "Select exactly 1 subject"
+                },
+                "Humanities": {
+                    "compulsory": [
+                        "Bangla",
+                        "English",
+                        "Mathematics",
+                        "Bangladesh and Global Studies",
+                        "Religion",
+                        "ICT",
+                        "Civics",
+                        "Economics",
+                        "Geography and Environment"
+                    ],
+                    "optional_pool": [
+                        "Higher Mathematics",
+                        "Agriculture Studies",
+                        "Computer Studies",
+                        "Home Science",
+                        "Fine Arts",
+                        "Arabic",
+                        "Sanskrit",
+                        "Pali"
+                    ],
+                    "optional_rule": "Select exactly 1 subject"
+                },
+                "Business_Studies": {
+                    "compulsory": [
+                        "Bangla",
+                        "English",
+                        "Mathematics",
+                        "Bangladesh and Global Studies",
+                        "Religion",
+                        "ICT",
+                        "Accounting",
+                        "Business Entrepreneurship",
+                        "Finance and Banking"
+                    ],
+                    "optional_pool": [
+                        "Higher Mathematics",
+                        "Computer Studies",
+                        "Agriculture Studies",
+                        "Home Science",
+                        "Arabic"
+                    ],
+                    "optional_rule": "Select exactly 1 subject"
+                }
+            }
+        },
+        {
+            "class": 10,
+            "inherits_from_class": 9
+        }
+    ],
+    "gpa_policy": {
+        "compulsory_subject_count": 9,
+        "optional_formula": "(Optional_GP - 2) added to total GP",
+        "gpa_formula": "GPA = (Sum of compulsory GP + (Optional GP - 2)) / 9",
+        "max_gpa": 5.0
+    }
+}

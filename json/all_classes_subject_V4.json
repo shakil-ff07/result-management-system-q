@@ -1,0 +1,1573 @@
+﻿{
+  "metadata": {
+    "title": "Bangladesh Secondary School Curriculum",
+    "authority": "National Curriculum and Textbook Board (NCTB)",
+    "education_system": "Bangladesh",
+    "last_updated": "2025",
+    "version": "4.2.0",
+    "changelog": {
+      "v4.0.0": [
+        "Added Class 6 with full subject list and marks_distribution",
+        "Added compulsory_school category (Career, PE, Fine Arts) for Class 6, 7, 8",
+        "Added marks_distribution field to all Class 7 subjects",
+        "Updated Class 8: Bangla and English split into 1st Paper & 2nd Paper",
+        "Added marks_distribution field to all Class 8 subjects"
+      ],
+      "v4.1.0": [
+        "Added marks_distribution to all Class 9/10 subjects (Science, Arts, Commerce)",
+        "Science practical subjects (Physics, Chemistry, Biology, Higher Math) include practical: 25",
+        "All Arts and Commerce group-specific subjects: CQ 70 + MCQ 30",
+        "Optional subjects across all groups updated with correct patterns"
+      ],
+      "v4.2.0": [
+        "Clarified শারীরিক শিক্ষা ও স্বাস্থ্য for SSC: school-based, no board exam, GPA counted",
+        "Clarified ক্যারিয়ার শিক্ষা for Class 6-8: school internal only, GPA not counted",
+        "Clarified শারীরিক শিক্ষা for Class 6-8: school internal only, GPA not counted",
+        "Added assessment_type, board_exam, gpa_counted fields to school-based subjects"
+      ]
+    }
+  },
+  "classes": [
+    {
+      "class_id": "class_6",
+      "class_name": "Class 6",
+      "class_name_bn": "ষষ্ঠ শ্রেণি",
+      "groups": [
+        {
+          "group_id": "general",
+          "group_name": "General",
+          "group_name_bn": "সাধারণ",
+          "subjects": {
+            "compulsory": [
+              {
+                "subject_id": "c6_bangla",
+                "subject_code": "101",
+                "name_en": "Bangla",
+                "name_bn": "বাংলা",
+                "type": "compulsory",
+                "weekly_periods": 8,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c6_english",
+                "subject_code": "107",
+                "name_en": "English",
+                "name_bn": "ইংরেজি",
+                "type": "compulsory",
+                "weekly_periods": 8,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c6_math",
+                "subject_code": "109",
+                "name_en": "Mathematics",
+                "name_bn": "গণিত",
+                "type": "compulsory",
+                "weekly_periods": 6,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 100,
+                    "mcq": 0
+                  }
+                }
+              },
+              {
+                "subject_id": "c6_science",
+                "subject_code": "127",
+                "name_en": "General Science",
+                "name_bn": "বিজ্ঞান",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c6_bgbs",
+                "subject_code": "150",
+                "name_en": "Bangladesh & Global Studies",
+                "name_bn": "বাংলাদেশ ও বিশ্বপরিচয়",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c6_religion",
+                "subject_code": "111",
+                "name_en": "Religion & Moral Education",
+                "name_bn": "ধর্ম ও নৈতিক শিক্ষা",
+                "type": "compulsory",
+                "weekly_periods": 3,
+                "note": "Islam / Hindu / Christian / Buddhist — যেকোনো একটি",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c6_ict",
+                "subject_code": "154",
+                "name_en": "Information & Communication Technology (ICT)",
+                "name_bn": "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "type": "compulsory",
+                "weekly_periods": 2,
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "written": {
+                    "total": 30,
+                    "cq": 20,
+                    "mcq": 10
+                  },
+                  "practical": 20
+                }
+              }
+            ],
+            "compulsory_school": [
+              {
+                "subject_id": "c6_career",
+                "subject_code": "170",
+                "name_en": "Work and Life-Oriented Education",
+                "name_bn": "কর্ম ও জীবনমুখী শিক্ষা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": false,
+                  "note": "School Activity / Viva. No board exam. GPA-তে count হয় না।"
+                }
+              },
+              {
+                "subject_id": "c6_pe",
+                "subject_code": "147",
+                "name_en": "Physical Education & Health",
+                "name_bn": "শারীরিক শিক্ষা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": false,
+                  "note": "School internal assessment only. No board exam. GPA-তে count হয় না।"
+                }
+              },
+              {
+                "subject_id": "c6_arts",
+                "subject_code": "141",
+                "name_en": "Fine Arts",
+                "name_bn": "চারু ও কারুকলা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "practical": 50,
+                  "note": "School Activity / Practical / Viva"
+                }
+              }
+            ],
+            "optional": [],
+            "select_optional": 0
+          }
+        }
+      ]
+    },
+    {
+      "class_id": "class_7",
+      "class_name": "Class 7",
+      "class_name_bn": "সপ্তম শ্রেণি",
+      "groups": [
+        {
+          "group_id": "general",
+          "group_name": "General",
+          "group_name_bn": "সাধারণ",
+          "subjects": {
+            "compulsory": [
+              {
+                "subject_id": "c7_bangla",
+                "subject_code": "101",
+                "name_en": "Bangla",
+                "name_bn": "বাংলা",
+                "type": "compulsory",
+                "weekly_periods": 8,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c7_english",
+                "subject_code": "107",
+                "name_en": "English",
+                "name_bn": "ইংরেজি",
+                "type": "compulsory",
+                "weekly_periods": 8,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c7_math",
+                "subject_code": "109",
+                "name_en": "Mathematics",
+                "name_bn": "গণিত",
+                "type": "compulsory",
+                "weekly_periods": 6,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 100,
+                    "mcq": 0
+                  }
+                }
+              },
+              {
+                "subject_id": "c7_science",
+                "subject_code": "127",
+                "name_en": "General Science",
+                "name_bn": "বিজ্ঞান",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c7_bgbs",
+                "subject_code": "150",
+                "name_en": "Bangladesh & Global Studies",
+                "name_bn": "বাংলাদেশ ও বিশ্বপরিচয়",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c7_religion",
+                "subject_code": "111",
+                "name_en": "Religion & Moral Education",
+                "name_bn": "ধর্ম ও নৈতিক শিক্ষা",
+                "type": "compulsory",
+                "weekly_periods": 3,
+                "note": "Islam / Hindu / Christian / Buddhist — যেকোনো একটি",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c7_ict",
+                "subject_code": "154",
+                "name_en": "Information & Communication Technology (ICT)",
+                "name_bn": "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "type": "compulsory",
+                "weekly_periods": 2,
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "written": {
+                    "total": 30,
+                    "cq": 20,
+                    "mcq": 10
+                  },
+                  "practical": 20
+                }
+              }
+            ],
+            "compulsory_school": [
+              {
+                "subject_id": "c7_career",
+                "subject_code": "170",
+                "name_en": "Work and Life-Oriented Education",
+                "name_bn": "কর্ম ও জীবনমুখী শিক্ষা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": false,
+                  "note": "School Activity / Viva. No board exam. GPA-তে count হয় না।"
+                }
+              },
+              {
+                "subject_id": "c7_pe",
+                "subject_code": "147",
+                "name_en": "Physical Education & Health",
+                "name_bn": "শারীরিক শিক্ষা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": false,
+                  "note": "School internal assessment only. No board exam. GPA-তে count হয় না।"
+                }
+              },
+              {
+                "subject_id": "c7_arts",
+                "subject_code": "141",
+                "name_en": "Fine Arts",
+                "name_bn": "চারু ও কারুকলা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "practical": 50,
+                  "note": "School Activity / Practical / Viva"
+                }
+              }
+            ],
+            "optional": [
+              {
+                "subject_id": "c7_opt_agri",
+                "subject_code": "134",
+                "name_en": "Agriculture Studies",
+                "name_bn": "কৃষিশিক্ষা",
+                "type": "optional"
+              },
+              {
+                "subject_id": "c7_opt_home",
+                "subject_code": "160",
+                "name_en": "Home Science",
+                "name_bn": "গার্হস্থ্য বিজ্ঞান",
+                "type": "optional"
+              },
+              {
+                "subject_id": "c7_opt_arabic",
+                "subject_code": "116",
+                "name_en": "Arabic",
+                "name_bn": "আরবি",
+                "type": "optional"
+              }
+            ],
+            "select_optional": 1
+          }
+        }
+      ]
+    },
+    {
+      "class_id": "class_8",
+      "class_name": "Class 8",
+      "class_name_bn": "অষ্টম শ্রেণি",
+      "groups": [
+        {
+          "group_id": "general",
+          "group_name": "General",
+          "group_name_bn": "সাধারণ",
+          "subjects": {
+            "compulsory": [
+              {
+                "subject_id": "c8_bangla_1",
+                "subject_code": "101",
+                "name_en": "Bangla 1st Paper",
+                "name_bn": "বাংলা ১ম পত্র",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_bangla_2",
+                "subject_code": "102",
+                "name_en": "Bangla 2nd Paper",
+                "name_bn": "বাংলা ২য় পত্র",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_english_1",
+                "subject_code": "107",
+                "name_en": "English 1st Paper",
+                "name_bn": "ইংরেজি ১ম পত্র",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_english_2",
+                "subject_code": "108",
+                "name_en": "English 2nd Paper",
+                "name_bn": "ইংরেজি ২য় পত্র",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_math",
+                "subject_code": "109",
+                "name_en": "Mathematics",
+                "name_bn": "গণিত",
+                "type": "compulsory",
+                "weekly_periods": 6,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 100,
+                    "mcq": 0
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_science",
+                "subject_code": "127",
+                "name_en": "General Science",
+                "name_bn": "বিজ্ঞান",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_bgbs",
+                "subject_code": "150",
+                "name_en": "Bangladesh & Global Studies",
+                "name_bn": "বাংলাদেশ ও বিশ্বপরিচয়",
+                "type": "compulsory",
+                "weekly_periods": 4,
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_religion",
+                "subject_code": "111",
+                "name_en": "Religion & Moral Education",
+                "name_bn": "ধর্ম ও নৈতিক শিক্ষা",
+                "type": "compulsory",
+                "weekly_periods": 3,
+                "note": "Islam / Hindu / Christian / Buddhist — যেকোনো একটি",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "c8_ict",
+                "subject_code": "154",
+                "name_en": "Information & Communication Technology (ICT)",
+                "name_bn": "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "type": "compulsory",
+                "weekly_periods": 2,
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "written": {
+                    "total": 30,
+                    "cq": 20,
+                    "mcq": 10
+                  },
+                  "practical": 20
+                }
+              }
+            ],
+            "compulsory_school": [
+              {
+                "subject_id": "c8_career",
+                "subject_code": "170",
+                "name_en": "Work and Life-Oriented Education",
+                "name_bn": "কর্ম ও জীবনমুখী শিক্ষা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": false,
+                  "note": "School Activity / Viva. No board exam. GPA-তে count হয় না।"
+                }
+              },
+              {
+                "subject_id": "c8_pe",
+                "subject_code": "147",
+                "name_en": "Physical Education & Health",
+                "name_bn": "শারীরিক শিক্ষা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": false,
+                  "note": "School internal assessment only. No board exam. GPA-তে count হয় না।"
+                }
+              },
+              {
+                "subject_id": "c8_arts",
+                "subject_code": "141",
+                "name_en": "Fine Arts",
+                "name_bn": "চারু ও কারুকলা",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "practical": 50,
+                  "note": "School Activity / Practical / Viva"
+                }
+              }
+            ],
+            "optional": [
+              {
+                "subject_id": "c8_opt_agri",
+                "subject_code": "134",
+                "name_en": "Agriculture Studies",
+                "name_bn": "কৃষিশিক্ষা",
+                "type": "optional"
+              },
+              {
+                "subject_id": "c8_opt_home",
+                "subject_code": "160",
+                "name_en": "Home Science",
+                "name_bn": "গার্হস্থ্য বিজ্ঞান",
+                "type": "optional"
+              },
+              {
+                "subject_id": "c8_opt_arabic",
+                "subject_code": "116",
+                "name_en": "Arabic",
+                "name_bn": "আরবি",
+                "type": "optional"
+              }
+            ],
+            "select_optional": 1
+          }
+        }
+      ]
+    },
+    {
+      "class_id": "class_9_10",
+      "class_name": "Class 9 & 10 (SSC)",
+      "class_name_bn": "নবম ও দশম শ্রেণি (এসএসসি)",
+      "groups": [
+        {
+          "group_id": "science",
+          "group_name": "Science",
+          "group_name_bn": "বিজ্ঞান",
+          "subjects": {
+            "compulsory": [
+              {
+                "subject_id": "s_bangla1",
+                "subject_code": "101",
+                "name_en": "Bangla First Paper",
+                "name_bn": "বাংলা প্রথম পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_bangla2",
+                "subject_code": "102",
+                "name_en": "Bangla Second Paper",
+                "name_bn": "বাংলা দ্বিতীয় পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_english1",
+                "subject_code": "107",
+                "name_en": "English First Paper",
+                "name_bn": "ইংরেজি প্রথম পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_english2",
+                "subject_code": "108",
+                "name_en": "English Second Paper",
+                "name_bn": "ইংরেজি দ্বিতীয় পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_math",
+                "subject_code": "109",
+                "name_en": "Mathematics",
+                "name_bn": "গণিত",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 100,
+                    "mcq": 0
+                  }
+                }
+              },
+              {
+                "subject_id": "s_physics",
+                "subject_code": "136",
+                "name_en": "Physics",
+                "name_bn": "পদার্থবিজ্ঞান",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  },
+                  "practical": 25
+                }
+              },
+              {
+                "subject_id": "s_chemistry",
+                "subject_code": "137",
+                "name_en": "Chemistry",
+                "name_bn": "রসায়ন",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  },
+                  "practical": 25
+                }
+              },
+              {
+                "subject_id": "s_biology",
+                "subject_code": "138",
+                "name_en": "Biology",
+                "name_bn": "জীববিজ্ঞান",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  },
+                  "practical": 25
+                }
+              },
+              {
+                "subject_id": "s_bgbs",
+                "subject_code": "150",
+                "name_en": "Bangladesh & Global Studies",
+                "name_bn": "বাংলাদেশ ও বিশ্বপরিচয়",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_religion",
+                "subject_code": "111",
+                "name_en": "Religion & Moral Education",
+                "name_bn": "ধর্ম ও নৈতিক শিক্ষা",
+                "type": "compulsory",
+                "note": "Islam / Hindu / Christian / Buddhist — যেকোনো একটি",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_ict",
+                "subject_code": "154",
+                "name_en": "Information & Communication Technology (ICT)",
+                "name_bn": "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "written": {
+                    "total": 30,
+                    "cq": 20,
+                    "mcq": 10
+                  },
+                  "practical": 20
+                }
+              }
+            ],
+            "optional": [
+              {
+                "subject_id": "s_opt_highermath",
+                "subject_code": "126",
+                "name_en": "Higher Mathematics",
+                "name_bn": "উচ্চতর গণিত",
+                "type": "optional",
+                "recommended_for": "Engineering / BUET aspirants",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  },
+                  "practical": 25
+                }
+              },
+              {
+                "subject_id": "s_opt_agri",
+                "subject_code": "134",
+                "name_en": "Agriculture Studies",
+                "name_bn": "কৃষিশিক্ষা",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_opt_home",
+                "subject_code": "160",
+                "name_en": "Home Science",
+                "name_bn": "গার্হস্থ্য বিজ্ঞান",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "s_opt_pe",
+                "subject_code": "147",
+                "name_en": "Physical Education & Health",
+                "name_bn": "শারীরিক শিক্ষা ও স্বাস্থ্য",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": true,
+                  "note": "School-based practical/continuous assessment. No board written exam. GPA-তে count হয়।"
+                }
+              }
+            ],
+            "select_optional": 1
+          }
+        },
+        {
+          "group_id": "arts",
+          "group_name": "Arts / Humanities",
+          "group_name_bn": "মানবিক",
+          "subjects": {
+            "compulsory": [
+              {
+                "subject_id": "a_bangla1",
+                "subject_code": "101",
+                "name_en": "Bangla First Paper",
+                "name_bn": "বাংলা প্রথম পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_bangla2",
+                "subject_code": "102",
+                "name_en": "Bangla Second Paper",
+                "name_bn": "বাংলা দ্বিতীয় পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_english1",
+                "subject_code": "107",
+                "name_en": "English First Paper",
+                "name_bn": "ইংরেজি প্রথম পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_english2",
+                "subject_code": "108",
+                "name_en": "English Second Paper",
+                "name_bn": "ইংরেজি দ্বিতীয় পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_math",
+                "subject_code": "109",
+                "name_en": "Mathematics",
+                "name_bn": "গণিত",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 100,
+                    "mcq": 0
+                  }
+                }
+              },
+              {
+                "subject_id": "a_bgbs",
+                "subject_code": "150",
+                "name_en": "Bangladesh & Global Studies",
+                "name_bn": "বাংলাদেশ ও বিশ্বপরিচয়",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_history",
+                "subject_code": "153",
+                "name_en": "History of Bangladesh & World Civilization",
+                "name_bn": "বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_geography",
+                "subject_code": "110",
+                "name_en": "Geography & Environment",
+                "name_bn": "ভূগোল ও পরিবেশ",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_civics",
+                "subject_code": "140",
+                "name_en": "Civics & Citizenship",
+                "name_bn": "পৌরনীতি ও নাগরিকতা",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_religion",
+                "subject_code": "111",
+                "name_en": "Religion & Moral Education",
+                "name_bn": "ধর্ম ও নৈতিক শিক্ষা",
+                "type": "compulsory",
+                "note": "Islam / Hindu / Christian / Buddhist — যেকোনো একটি",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_ict",
+                "subject_code": "154",
+                "name_en": "Information & Communication Technology (ICT)",
+                "name_bn": "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "written": {
+                    "total": 30,
+                    "cq": 20,
+                    "mcq": 10
+                  },
+                  "practical": 20
+                }
+              }
+            ],
+            "optional": [
+              {
+                "subject_id": "a_opt_economics",
+                "subject_code": "141",
+                "name_en": "Economics",
+                "name_bn": "অর্থনীতি",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_opt_sociology",
+                "subject_code": "155",
+                "name_en": "Sociology",
+                "name_bn": "সমাজবিজ্ঞান",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_opt_homescience",
+                "subject_code": "160",
+                "name_en": "Home Science",
+                "name_bn": "গার্হস্থ্য বিজ্ঞান",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_opt_agri",
+                "subject_code": "134",
+                "name_en": "Agriculture Studies",
+                "name_bn": "কৃষিশিক্ষা",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_opt_arabic",
+                "subject_code": "116",
+                "name_en": "Arabic",
+                "name_bn": "আরবি",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "a_opt_finearts",
+                "subject_code": "142",
+                "name_en": "Fine Arts",
+                "name_bn": "চারু ও কারুকলা",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              }
+            ],
+            "select_optional": 1
+          }
+        },
+        {
+          "group_id": "commerce",
+          "group_name": "Commerce / Business Studies",
+          "group_name_bn": "ব্যবসায় শিক্ষা",
+          "subjects": {
+            "compulsory": [
+              {
+                "subject_id": "b_bangla1",
+                "subject_code": "101",
+                "name_en": "Bangla First Paper",
+                "name_bn": "বাংলা প্রথম পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_bangla2",
+                "subject_code": "102",
+                "name_en": "Bangla Second Paper",
+                "name_bn": "বাংলা দ্বিতীয় পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_english1",
+                "subject_code": "107",
+                "name_en": "English First Paper",
+                "name_bn": "ইংরেজি প্রথম পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_english2",
+                "subject_code": "108",
+                "name_en": "English Second Paper",
+                "name_bn": "ইংরেজি দ্বিতীয় পত্র",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_math",
+                "subject_code": "109",
+                "name_en": "Mathematics",
+                "name_bn": "গণিত",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 100,
+                    "mcq": 0
+                  }
+                }
+              },
+              {
+                "subject_id": "b_bgbs",
+                "subject_code": "150",
+                "name_en": "Bangladesh & Global Studies",
+                "name_bn": "বাংলাদেশ ও বিশ্বপরিচয়",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_accounting",
+                "subject_code": "146",
+                "name_en": "Accounting",
+                "name_bn": "হিসাববিজ্ঞান",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_business",
+                "subject_code": "143",
+                "name_en": "Business Entrepreneurship",
+                "name_bn": "ব্যবসায় উদ্যোগ",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_finance",
+                "subject_code": "152",
+                "name_en": "Finance & Banking",
+                "name_bn": "ফিন্যান্স ও ব্যাংকিং",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_religion",
+                "subject_code": "111",
+                "name_en": "Religion & Moral Education",
+                "name_bn": "ধর্ম ও নৈতিক শিক্ষা",
+                "type": "compulsory",
+                "note": "Islam / Hindu / Christian / Buddhist — যেকোনো একটি",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_ict",
+                "subject_code": "154",
+                "name_en": "Information & Communication Technology (ICT)",
+                "name_bn": "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "type": "compulsory",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "written": {
+                    "total": 30,
+                    "cq": 20,
+                    "mcq": 10
+                  },
+                  "practical": 20
+                }
+              }
+            ],
+            "optional": [
+              {
+                "subject_id": "b_opt_economics",
+                "subject_code": "141",
+                "name_en": "Economics",
+                "name_bn": "অর্থনীতি",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_opt_agri",
+                "subject_code": "134",
+                "name_en": "Agriculture Studies",
+                "name_bn": "কৃষিশিক্ষা",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_opt_homescience",
+                "subject_code": "160",
+                "name_en": "Home Science",
+                "name_bn": "গার্হস্থ্য বিজ্ঞান",
+                "type": "optional",
+                "marks_distribution": {
+                  "total_marks": 100,
+                  "written": {
+                    "total": 100,
+                    "cq": 70,
+                    "mcq": 30
+                  }
+                }
+              },
+              {
+                "subject_id": "b_opt_pe",
+                "subject_code": "147",
+                "name_en": "Physical Education & Health",
+                "name_bn": "শারীরিক শিক্ষা ও স্বাস্থ্য",
+                "type": "compulsory_school",
+                "marks_distribution": {
+                  "total_marks": 50,
+                  "assessment_type": "school_based",
+                  "practical": 50,
+                  "board_exam": false,
+                  "gpa_counted": true,
+                  "note": "School-based practical/continuous assessment. No board written exam. GPA-তে count হয়।"
+                }
+              }
+            ],
+            "select_optional": 1
+          }
+        }
+      ]
+    }
+  ],
+  "gpa_policy": {
+    "applies_to": [
+      "SSC",
+      "JSC",
+      "School Internal Exams"
+    ],
+    "authority": "Bangladesh Board of Education (NCTB / Dhaka Board)",
+    "grading_scale": [
+      {
+        "grade_point": 5.0,
+        "letter_grade": "A+",
+        "grade_name_en": "Outstanding",
+        "grade_name_bn": "অসাধারণ",
+        "marks_range": {
+          "min": 80,
+          "max": 100
+        }
+      },
+      {
+        "grade_point": 4.0,
+        "letter_grade": "A",
+        "grade_name_en": "Excellent",
+        "grade_name_bn": "উৎকৃষ্ট",
+        "marks_range": {
+          "min": 70,
+          "max": 79
+        }
+      },
+      {
+        "grade_point": 3.5,
+        "letter_grade": "A-",
+        "grade_name_en": "Very Good",
+        "grade_name_bn": "অতি ভালো",
+        "marks_range": {
+          "min": 60,
+          "max": 69
+        }
+      },
+      {
+        "grade_point": 3.0,
+        "letter_grade": "B",
+        "grade_name_en": "Good",
+        "grade_name_bn": "ভালো",
+        "marks_range": {
+          "min": 50,
+          "max": 59
+        }
+      },
+      {
+        "grade_point": 2.0,
+        "letter_grade": "C",
+        "grade_name_en": "Average",
+        "grade_name_bn": "গড়",
+        "marks_range": {
+          "min": 40,
+          "max": 49
+        }
+      },
+      {
+        "grade_point": 1.0,
+        "letter_grade": "D",
+        "grade_name_en": "Below Average",
+        "grade_name_bn": "গড়ের নিচে",
+        "marks_range": {
+          "min": 33,
+          "max": 39
+        }
+      },
+      {
+        "grade_point": 0.0,
+        "letter_grade": "F",
+        "grade_name_en": "Fail",
+        "grade_name_bn": "অকৃতকার্য",
+        "marks_range": {
+          "min": 0,
+          "max": 32
+        }
+      }
+    ],
+    "gpa_calculation": {
+      "method": "Weighted Average of all subjects",
+      "method_bn": "সকল বিষয়ের গ্রেড পয়েন্টের গড়",
+      "formula": "GPA = Sum of all subject grade points / Total number of subjects",
+      "optional_subject_policy": {
+        "included_in_gpa": true,
+        "grace_rule": "If optional subject grade is higher than the lowest compulsory subject grade, optional subject replaces the lowest grade in GPA calculation",
+        "grace_rule_bn": "ঐচ্ছিক বিষয়ের গ্রেড যদি যেকোনো আবশ্যিক বিষয়ের চেয়ে বেশি হয়, তাহলে সেটি সবচেয়ে কম গ্রেডের আবশ্যিক বিষয়টি প্রতিস্থাপন করে GPA গণনায়"
+      },
+      "max_gpa": 5.0,
+      "pass_gpa": 1.0,
+      "golden_a_plus": {
+        "description": "GPA 5.00 in ALL subjects including optional",
+        "description_bn": "সকল বিষয়ে A+ (GPA ৫.০০) পেলে গোল্ডেন A+ বলা হয়"
+      }
+    },
+    "pass_conditions": {
+      "minimum_pass_marks": 33,
+      "minimum_pass_gpa": 1.0,
+      "must_pass_all_compulsory": true,
+      "fail_condition": "F grade (Grade Point 0.00) in any compulsory subject = Overall Fail",
+      "fail_condition_bn": "যেকোনো আবশ্যিক বিষয়ে F পেলে পরীক্ষায় অকৃতকার্য বলে গণ্য হবে"
+    },
+    "marks_distribution": {
+      "total_marks_per_subject": 100,
+      "written_exam": {
+        "marks": 70,
+        "note": "Board final written exam"
+      },
+      "school_continuous_assessment": {
+        "marks": 30,
+        "breakdown": {
+          "class_test_attendance": 10,
+          "mid_term_exam": 10,
+          "practical_or_assignment": 10
+        }
+      },
+      "note_for_practical_subjects": "Physics, Chemistry, Biology, Agriculture etc. may have separate practical marks within the 30 marks CA"
+    },
+    "special_rules": {
+      "fourth_subject_rule": {
+        "applicable_for": "SSC Exam",
+        "description": "Optional (4th) subject grade point replaces the lowest compulsory subject grade point if it improves overall GPA",
+        "description_bn": "SSC পরীক্ষায় ঐচ্ছিক বিষয়ের গ্রেড পয়েন্ট যদি কোনো আবশ্যিক বিষয়ের গ্রেড পয়েন্টের চেয়ে বেশি হয়, তাহলে GPA উন্নয়নের জন্য সেটি প্রতিস্থাপিত হবে"
+      },
+      "grace_marks": {
+        "applicable": true,
+        "description": "A student failing by 1-2 marks in a subject may receive grace marks at board discretion",
+        "description_bn": "কোনো বিষয়ে ১-২ নম্বরের জন্য ফেল হলে বোর্ড বিবেচনায় গ্রেস মার্ক দেওয়া হতে পারে"
+      }
+    },
+    "gpa_helper": {
+      "description": "Use this lookup table to convert marks to grade point programmatically",
+      "lookup": [
+        {
+          "min": 80,
+          "max": 100,
+          "grade_point": 5.0,
+          "letter": "A+"
+        },
+        {
+          "min": 70,
+          "max": 79,
+          "grade_point": 4.0,
+          "letter": "A"
+        },
+        {
+          "min": 60,
+          "max": 69,
+          "grade_point": 3.5,
+          "letter": "A-"
+        },
+        {
+          "min": 50,
+          "max": 59,
+          "grade_point": 3.0,
+          "letter": "B"
+        },
+        {
+          "min": 40,
+          "max": 49,
+          "grade_point": 2.0,
+          "letter": "C"
+        },
+        {
+          "min": 33,
+          "max": 39,
+          "grade_point": 1.0,
+          "letter": "D"
+        },
+        {
+          "min": 0,
+          "max": 32,
+          "grade_point": 0.0,
+          "letter": "F"
+        }
+      ]
+    }
+  }
+}

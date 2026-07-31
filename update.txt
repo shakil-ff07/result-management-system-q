@@ -1,0 +1,4 @@
+For Classes 9 and 10, there will be temporary sections (A and B) along with three final academic groups: Science, Arts, and Commerce.
+Based on the results of Class 8, students will be automatically distributed into the temporary A and B sections according to the merit list, similar to the current system. These sections will remain temporary.
+Before the Half-Yearly Examination, administrators will be able to manually select and move students from the temporary sections into their final academic groups (Science, Arts, or Commerce).
+After being assigned to a final group, students will receive their roll numbers based on their merit position within that specific group.

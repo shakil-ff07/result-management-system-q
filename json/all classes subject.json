@@ -1,0 +1,110 @@
+﻿{
+  "Class 6": {
+    "Compulsory Subjects": [
+      "Bangla 1st Paper",
+      "Bangla 2nd Paper",
+      "English 1st Paper",
+      "English 2nd Paper",
+      "Mathematics",
+      "Science",
+      "Bangladesh and World Introduction",
+      "ICT",
+      "Religion and Moral Education",
+      "Arts and Crafts",
+      "Physical Education and Health",
+      "Agriculture Education"
+    ]
+  },
+  "Class 7": {
+    "Compulsory Subjects": [
+      "Bangla 1st Paper",
+      "Bangla 2nd Paper",
+      "English 1st Paper",
+      "English 2nd Paper",
+      "Mathematics",
+      "Science",
+      "Bangladesh and World Introduction",
+      "ICT",
+      "Religion and Moral Education",
+      "Arts and Crafts",
+      "Physical Education",
+      "Agriculture"
+    ]
+  },
+  "Class 8": {
+    "Compulsory Subjects": [
+      "Bangla 1st Paper",
+      "Bangla 2nd Paper",
+      "English 1st Paper",
+      "English 2nd Paper",
+      "Mathematics",
+      "Science",
+      "Bangladesh and World Introduction",
+      "ICT",
+      "Religion and Moral Education",
+      "Arts and Crafts",
+      "Physical Education",
+      "Agriculture"
+    ]
+  },
+  "Class 9": {
+    "Compulsory Subjects": [
+      "Bangla 1st Paper",
+      "Bangla 2nd Paper",
+      "English 1st Paper",
+      "English 2nd Paper",
+      "Mathematics",
+      "Bangladesh and World Introduction",
+      "ICT",
+      "Religion Education",
+      "Work and Life-Oriented Education"
+    ],
+    "Science Group": [
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Higher Mathematics"
+    ],
+    "Commerce Group": [
+      "Accounting",
+      "Business Studies",
+      "Finance and Banking"
+    ],
+    "Arts/Humanities Group": [
+      "History",
+      "Geography and Environment",
+      "Civics",
+      "Economics"
+    ]
+  },
+  "Class 10": {
+    "Compulsory Subjects": [
+      "Bangla 1st Paper",
+      "Bangla 2nd Paper",
+      "English 1st Paper",
+      "English 2nd Paper",
+      "Mathematics",
+      "Bangladesh and World Introduction",
+      "ICT",
+      "Religion Education",
+      "Work and Life-Oriented Education"
+    ],
+    "Science Group": [
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Higher Mathematics"
+    ],
+    "Commerce Group": [
+      "Accounting",
+      "Business Studies",
+      "Finance and Banking"
+    ],
+    "Arts/Humanities Group": [
+      "History",
+      "Geography and Environment",
+      "Civics",
+      "Economics"
+    ]
+  }
+}
