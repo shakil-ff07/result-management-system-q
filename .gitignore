@@ -1,1 +1,8 @@
-Nothing to output - the changes only include a source/config file (README.md) with no build artifacts, dependencies, or temp files that need to be ignored.
+# Examples
+
+# Project specific
+RESULT_PUBLISH_FEATURE.md
+admin/api/toggle-result-publish.php
+database/migrations/add_result_publish_control.sql
+admin/generate-results.php
+result.php

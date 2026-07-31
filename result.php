@@ -112,13 +112,18 @@ if ($max_possible_marks === 0) {
     $max_possible_marks = count($marks) * 100; // Fallback if calculation failed
 }
 
-// 4. Fetch Result Summary
+// 4. Fetch Result Summary with publish status check
 $stmt = $conn->prepare("SELECT * FROM final_results WHERE student_id = ? AND exam_type = ?");
 $stmt->execute([$student_id, $exam_type]);
 $summary = $stmt->fetch();
 
 if (!$summary) {
     display_error("Result Not Published", "The official results for this examination cycle have not been finalized or published yet. Please check back later.", "fa-clock");
+}
+
+// Check if result is published (new feature)
+if (isset($summary['is_published']) && $summary['is_published'] == 0) {
+    display_error("Result Not Published", "The results for this examination have been compiled but are not yet publicly available. Please wait for the official announcement.", "fa-eye-slash");
 }
 
 // Helper function for professional errors
