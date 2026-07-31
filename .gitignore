@@ -1,8 +1,4 @@
-# Examples
-
-# Project specific
-RESULT_PUBLISH_FEATURE.md
-admin/api/toggle-result-publish.php
-database/migrations/add_result_publish_control.sql
-admin/generate-results.php
-result.php
+```
+# Directories
+temp_repo/
+```
